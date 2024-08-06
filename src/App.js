@@ -1,13 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Keyboard from './components/Keyboard';
+import MyKey from './components/Keyboard';
+
 
 function App() {
   return (
     <div className="App">
       <header>
-        
-       <Keyboard/>
+       <MyKey/>
       </header>
     </div>
   );

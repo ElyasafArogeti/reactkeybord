@@ -1,6 +1,6 @@
-import React from 'react';
-import './Keyboard.css'; 
 
+import React, { useState } from 'react';
+import './Keyboard.css'; 
 const hebrewKeys = [
   ['ק', 'ר', 'א', 'ט', 'ו', 'ן', 'ם', 'פ'],
   ['ש', 'ד', 'ג', 'כ', 'ע', 'י', 'ח', 'ל', 'ך', 'ף'],
@@ -8,7 +8,7 @@ const hebrewKeys = [
   ['רווח']
 ];
 
-const Keyboard = () => {
+const Keyboard = (props) => {
   return (
     <div className="keyboard">
       {hebrewKeys.map((row, rowIndex) => (
@@ -17,8 +17,8 @@ const Keyboard = () => {
         
           {row.map((key, keyIndex) => (
             
-            <div className="key" key={keyIndex}>  
-              {key === 'רווח' ? <div className="space-key">{key}</div> : key}
+            <div className="key" key={keyIndex} onClick={()=>props(key)} >  
+             
             </div>
           ))}
         </div>
@@ -27,4 +27,21 @@ const Keyboard = () => {
   );
 };
 
-export default Keyboard;
+const MyKey =()=>{
+const[text,setText]=useState("");
+function updata (key) {
+    setText((prevText) => prevText + key);
+    
+}
+return(
+    <>
+     <p>{text}</p>
+    <h1>מקלדת עברית</h1>
+    <Keyboard />
+    </>
+)
+
+
+}
+
+export default MyKey;
