@@ -1,0 +1,10 @@
+
+
+.DisplayView{
+    display: flex;
+    height: 200px;
+    width: 500px;
+    background-color: rgb(249, 249, 249);
+    border: 1PX solid black;
+    display: flex;
+}

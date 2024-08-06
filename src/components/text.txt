@@ -1,0 +1,59 @@
+import React, { useState } from 'react';
+import './Keyboard.css'; 
+
+const hebrewKeys = [
+  ['ק', 'ר', 'א', 'ט', 'ו', 'ן', 'ם', 'פ'],
+  ['ש', 'ד', 'ג', 'כ', 'ע', 'י', 'ח', 'ל', 'ך', 'ף'],
+  ['ז', 'ס', 'ב', 'ה', 'נ', 'מ', 'צ', 'ת', 'ץ'],
+  ['רווח', 'שפה']
+];
+
+const englishKeys = [
+  ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+  ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+  ['Z', 'X', 'C', 'V', 'B', 'N', 'M'],
+  ['SPACE', 'LANG']
+];
+
+const Keyboard = ({ onKeyPress, isHebrew }) => {
+  const keys = isHebrew ? hebrewKeys : englishKeys;
+
+  return (
+    <div className="keyboard">
+      {keys.map((row, rowIndex) => (
+        <div className="keyboard-row" key={rowIndex}>
+          {row.map((key, keyIndex) => (
+            <div className="key" key={keyIndex} onClick={() => onKeyPress(key)}>
+              {key}
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const MyKey = () => {
+  const [text, setText] = useState("");
+  const [isHebrew, setIsHebrew] = useState(true);
+
+  const update = (key) => {
+    if (key === 'רווח' || key === 'SPACE') {
+      setText((prevText) => prevText + ' ');
+    } else if (key === 'שפה' || key === 'LANG') {
+      setIsHebrew(!isHebrew);
+    } else {
+      setText((prevText) => prevText + key);
+    }
+  };
+
+  return (
+    <>
+      <p>{text}</p>
+      <h1>מקלדת {isHebrew ? 'עברית' : 'אנגלית'}</h1>
+      <Keyboard onKeyPress={update} isHebrew={isHebrew} />
+    </>
+  );
+};
+
+export default MyKey;
