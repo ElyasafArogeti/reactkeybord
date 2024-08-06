@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import "./Keyboard.css";
 import Display from "./Display";
 import './Display.css';
+import Size from "./Size.jsx";
 
 const hebrewKeys = [
   ["ק", "ר", "א", "ט", "ו", "ן", "ם", "פ"],
   ["ש", "ד", "ג", "כ", "ע", "י", "ח", "ל", "ך", "ף"],
   ["ז", "ס", "ב", "ה", "נ", "מ", "צ", "ת", "ץ"],
-  ["רווח", "שפה"],
+  ["  ", "שפה"],
 ];
 
-const select = (key) => {
-  console.log(key);
-};
+const Keyboard = ({text ,setText}) => {
 
-const Keyboard = (key) => {
+  const select = (key) => {
+    setText(text + key);
+  };
+
   return (
     <div className="keyboard">
       {hebrewKeys.map((row, rowIndex) => (
@@ -31,15 +33,14 @@ const Keyboard = (key) => {
 };
 
 const MyKey = () => {
-  const [text, setText] = useState("");
-  function updata(key) {
-    // setText((prevText) => prevText + key);
-  }
+  const [text , setText] = useState("");
+
   return (
     <div className="DisplayView">
-        <Display />
+      <Display text={text} />
       <h1>מקלדת עברית</h1>
-      <Keyboard />
+      <Keyboard  text = {text} setText = {setText}/> 
+     <Size/>        
     </div>
   );
 };
