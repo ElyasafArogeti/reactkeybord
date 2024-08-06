@@ -4,7 +4,7 @@ import './Display.css'
 const Display = (props) => {
 
   return (
-    <div className='DisplayView'>Display</div>
+    <p className='text'>Display</p>
   )
 }
 

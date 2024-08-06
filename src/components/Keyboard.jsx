@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Keyboard.css";
 import Display from "./Display";
+import './Display.css';
 
 const hebrewKeys = [
   ["ק", "ר", "א", "ט", "ו", "ן", "ם", "פ"],
@@ -8,6 +9,7 @@ const hebrewKeys = [
   ["ז", "ס", "ב", "ה", "נ", "מ", "צ", "ת", "ץ"],
   ["רווח", "שפה"],
 ];
+
 const select = (key) => {
   console.log(key);
 };
@@ -34,12 +36,11 @@ const MyKey = () => {
     // setText((prevText) => prevText + key);
   }
   return (
-    <>
-      <p>{text}</p>
+    <div className="DisplayView">
+        <Display />
       <h1>מקלדת עברית</h1>
-      <Display />
       <Keyboard />
-    </>
+    </div>
   );
 };
 
