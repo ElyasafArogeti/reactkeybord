@@ -1,0 +1,29 @@
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .keyboard-row {
+    display: flex;
+    margin: 5px 0;
+  }
+  
+  .key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 40px;
+    margin: 2px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .space-key {
+    min-width: 500px;
+  }
+  
