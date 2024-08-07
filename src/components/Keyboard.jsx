@@ -16,7 +16,7 @@ const englishKeys = [
   ["1","2","3","4","5","6","7","8","9"],
   ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
   ["a", "s", "d", "f", "g", "h", "j", "k", "l"],
-  ["z", "x", "c", "v", "b", "n", "m"],
+  [ "⬆️","z", "x", "c", "v", "b", "n", "m"],
   ["🔽","🔼","_","😀", "🌐", "↩", "Delete", "Ctrl Z"],
 ];
 const emojiKey = [
@@ -24,6 +24,13 @@ const emojiKey = [
   ["🎉", "💯", "🔥", "✨", "🚀", "🎈", "❤️", "💔", "🎁"],
   ["⬅️", "➡️", "⬆️", "⬇️", "✔️", "❌", "🔔", "🔕"],
   ["_","⌨", "🌐", "↩", "Delete", "Ctrl Z" ],
+];
+const englishKeysUp = [
+  ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+  ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+  ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
+  ["⬇️","Z", "X", "C", "V", "B", "N", "M"],
+  ["🔽", "🔼", "_", "😀", "🌐", "↩", "Delete", "Ctrl Z"],
 ];
 
 const Keyboard = ({setText, arr, setArr,setBoard,board,emojiKeys}) => {
@@ -49,6 +56,14 @@ const Keyboard = ({setText, arr, setArr,setBoard,board,emojiKeys}) => {
     }
     else if(key==="🌐"){
       if(board === englishKeys) setBoard(hebrewKeys) ;
+      else setBoard(englishKeys);
+    }
+    else if(key==="⬆️"){
+      if(board === englishKeys) setBoard(englishKeysUp) ;
+      else setBoard(englishKeys);
+    }
+    else if(key==="⬇️"){
+      if(board === englishKeysUp) setBoard(englishKeys) ;
       else setBoard(englishKeys);
     }
      else if (key === "Ctrl Z") {
