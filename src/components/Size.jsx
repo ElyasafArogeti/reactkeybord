@@ -1,16 +1,14 @@
-import React from 'react'
+import React from "react";
+import './Size.css';
 
-const Size = () => {
+const Size = (props) => {
   return (
-    <div>   
-       <div className='size'>12</div>
-       <div className='size'>18</div>
-       <div className='size'>24</div>
-       <div className='size'>30</div>
-    
+    <div className='size'>
+      <button className='size-button' onClick={() => props.setFontSize(props.fontSize + 6)}>+</button>
+      <p className='font-size-display'>{props.fontSize}</p>
+      <button className='size-button' onClick={() => props.setFontSize(props.fontSize - 6)}>-</button>
     </div>
-   
-  )
+  );
 }
 
 export default Size;

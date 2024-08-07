@@ -1,0 +1,58 @@
+/* ColorText.css */
+.color-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .color-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    margin: 5px;
+  }
+  
+  .color-button.red {
+    background-color: #e74c3c;
+  }
+  
+  .color-button.red:hover {
+    background-color: #c0392b;
+  }
+  
+  .color-button.blue {
+    background-color: #3498db;
+  }
+  
+  .color-button.blue:hover {
+    background-color: #2980b9;
+  }
+  
+  .color-button.yellow {
+    background-color: #f1c40f;
+    color: black;
+  }
+  
+  .color-button.yellow:hover {
+    background-color: #f39c12;
+  }
+  
+  .color-button.black {
+    background-color: #2c3e50;
+  }
+  
+  .color-button.black:hover {
+    background-color: #1c2833;
+  }
+  
+  .color-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  

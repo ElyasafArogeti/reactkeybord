@@ -1,30 +1,77 @@
+/* Keyboard.css */
 .keyboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .keyboard-row {
-    display: flex;
-    margin: 5px 0;
-  }
-  
-  .key {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 40px;
-    margin: 2px;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    background-color: #f0f0f0;
-    cursor: pointer;
-    user-select: none;
-  }
-  
-  .space-key {
-    min-width: 500px;
-  }
-  
+.keyboard-row {
+  display: flex;
+  gap: 5px;
+}
+
+.key {
+  padding: 15px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.key:active {
+  background-color: #ddd;
+  transform: translateY(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.key:hover {
+  background-color: #e0e0e0;
+}
+
+.DisplayView {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.text {
+  width: 600px;
+  height: 150px;
+  background-color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.size {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.size input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+}
