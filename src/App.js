@@ -2,7 +2,6 @@
 import './App.css';
 import MyKey from './components/Keyboard';
 
-
 function App() {
   return (
     <div >
